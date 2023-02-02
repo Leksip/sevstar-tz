@@ -1,0 +1,14 @@
+ul{
+  list-style-type: none;
+}
+
+.post-detail{
+  &__title{
+    font-size: 24px;
+    font-weight: 700;
+    padding: 10px;
+  }
+  &__item{
+    padding: 10px 0;
+  }
+}

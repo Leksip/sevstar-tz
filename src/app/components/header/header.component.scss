@@ -1,0 +1,13 @@
+ul{
+  list-style-type: none;
+}
+
+.header{
+  &__container{
+    margin: 0 auto;
+    max-width: 1000px;
+    background: #ff5825;
+    display: flex;
+    justify-content: space-between;
+  }
+}

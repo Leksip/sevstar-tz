@@ -1,0 +1,19 @@
+<div class="post">
+
+  <div class="post__container">
+    <h1 class="post__title" [routerLink]="['/post', post.objectID]">{{post.title}}</h1>
+
+    <a *ngIf="post.url"
+       class="post__link"
+       target="_blank"
+       href="{{post.url}}">
+      (Перейти на сайт)
+    </a>
+
+  </div>
+  <div class="post__container">
+    <p class="post__points">{{post.points}} points by {{post.author}} </p>
+    <p class="post__comments">{{post.num_comments}} comments</p>
+  </div>
+
+</div>

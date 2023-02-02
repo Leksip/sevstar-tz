@@ -1,0 +1,17 @@
+<div class="post-detail">
+  <div class="wrapper">
+    <div *ngIf="!isLoading else loading" class="post-detail__container">
+      <h1 class="post-detail__title">{{postDetail.title}}</h1>
+      <ul *ngFor="let comment of postDetail.children" class="post-detail__list">
+        <li class="post-detail__item">
+          <app-commentaries
+            [level]="1"
+            [comment]="comment"
+          ></app-commentaries>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>Подождите, идет загрузка...</ng-template>

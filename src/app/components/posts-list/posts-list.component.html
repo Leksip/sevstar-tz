@@ -1,0 +1,15 @@
+<div class="posts-list">
+  <div class="wrapper">
+    <div class="posts-list__container">
+      <ol type="1">
+        <li *ngFor="let post of hits">
+          <app-post
+            [post]="post"
+          >
+          </app-post>
+        </li>
+      </ol>
+    </div>
+    <button *ngIf="isShow" (click)="showMore()">ShowMore</button>
+  </div>
+</div>
