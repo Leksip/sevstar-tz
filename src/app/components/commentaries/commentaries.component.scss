@@ -1,11 +1,24 @@
-.commentaries{
-border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  &__author{
-    font-size: 16px;
-    color: black;
-  }
-  &__text{
+.commentaries {
+  &__author {
     font-size: 14px;
+    color: rgb(70, 70, 70);
+    font-style: italic;
+    margin-bottom: 5px;
+  }
+
+  &__text {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 20px;
+  }
+
+  &__reply-button {
+    background: none;
+    cursor: pointer;
+    font-size: 12px;
+    margin-bottom: 10px;
+    padding: 0;
+    text-decoration: underline;
     color: rgba(0, 0, 0, 0.8);
   }
 }

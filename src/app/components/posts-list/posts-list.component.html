@@ -1,7 +1,7 @@
 <div class="posts-list">
   <div class="wrapper">
     <div class="posts-list__container">
-      <ol type="1">
+      <ol type="1" class="posts-list__items">
         <li *ngFor="let post of hits">
           <app-post
             [post]="post"
@@ -9,7 +9,21 @@
           </app-post>
         </li>
       </ol>
+      <button class="posts-list__button"
+              *ngIf="isShow && !isLoading"
+              (click)="showMore()"
+      >
+        ShowMore
+      </button>
     </div>
-    <button *ngIf="isShow" (click)="showMore()">ShowMore</button>
+    <ng-container *ngIf="isLoading">
+      <ng-container *ngTemplateOutlet="loading"></ng-container>
+    </ng-container>
   </div>
 </div>
+
+<ng-template #loading>
+  <p class="preloader">
+    Подождите, идет загрузка...
+  </p>
+</ng-template>

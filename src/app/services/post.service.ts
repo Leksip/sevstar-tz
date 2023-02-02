@@ -1,13 +1,10 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {PostDetail} from '../models/post-detail';
 import {environment} from '../../environments/environment';
+import {PostDetail} from '../models/post-detail';
+import {queryParam} from "../models/query-param";
 
-export interface queryParam {
-  name: string,
-  value: any
-}
 
 @Injectable({
   providedIn: 'root'

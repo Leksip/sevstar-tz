@@ -1,18 +1,18 @@
-<div
-  class="commentaries"
-  [style.marginLeft.px]="level * 30"
+<div *ngIf="comment.author && comment.text"
+     class="commentaries"
+     [style.paddingLeft.px]="level * 25"
 >
   <p class="commentaries__author">
-    "{{comment.author}}"
+    {{comment.author}}:
   </p>
   <p class="commentaries__text"
      [innerHTML]="comment.text">
   </p>
+  <button class="commentaries__reply-button">reply</button>
 </div>
 <div *ngFor="let child of comment.children">
   <app-commentaries
     [level]="level"
-    style="color: rgba(123,165,143,0.53)"
     [comment]="child"
   ></app-commentaries>
 </div>

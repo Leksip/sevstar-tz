@@ -13,6 +13,7 @@ export class PostsListComponent implements OnInit, OnDestroy {
   page = 0;
   nbPages = 0;
   isShow = true;
+  isLoading = false;
   $destroy: Subject<void> = new Subject<void>();
 
   constructor(
@@ -21,10 +22,11 @@ export class PostsListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-      this.getPosts()
+    this.getPosts()
   }
 
   showMore() {
+    this.isLoading = true
     this.page++;
     this.isShow = !Boolean(this.page + 1 === this.nbPages)
     this.postsService.getPosts([
@@ -40,11 +42,13 @@ export class PostsListComponent implements OnInit, OnDestroy {
       takeUntil(this.$destroy)
     ).subscribe(posts => {
         this.hits = [...this.hits, ...posts.hits];
+        this.isLoading = false
       }
     );
   }
 
-  getPosts(){
+  getPosts() {
+    this.isLoading = true
     this.postsService.getPosts([
       {
         name: 'tags',
@@ -57,9 +61,9 @@ export class PostsListComponent implements OnInit, OnDestroy {
     ]).pipe(
       takeUntil(this.$destroy)
     ).subscribe(posts => {
-        this.hits = posts.hits;
+        this.hits = posts.hits
         this.nbPages = posts.nbPages
-      console.log(posts.hits)
+        this.isLoading = false
       }
     );
   }

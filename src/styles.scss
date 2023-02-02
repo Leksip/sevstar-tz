@@ -1,7 +1,13 @@
 @import "../../sevstar-tz/src/assets/styles/reset";
 
-.wrapper{
+.wrapper {
   max-width: 1000px;
   background: rgb(237, 235, 235);
   margin: 0 auto;
+}
+
+.preloader {
+  font-size: 18px;
+  padding: 20px 0;
+  text-align: center;
 }

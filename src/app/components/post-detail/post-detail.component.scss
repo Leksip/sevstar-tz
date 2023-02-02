@@ -1,14 +1,53 @@
-ul{
+ul {
   list-style-type: none;
 }
 
-.post-detail{
-  &__title{
+.post-detail {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    padding: 20px 10px;
+    padding-bottom: 0;
+  }
+
+  &__title {
     font-size: 24px;
     font-weight: 700;
-    padding: 10px;
+    margin-right: 10px;
   }
-  &__item{
-    padding: 10px 0;
+
+  &__points {
+    font-size: 10px;
+    padding-left: 10px;
+    margin-bottom: 25px;
+    color: rgba(28, 28, 28, 0.63);
+  }
+
+  &__commentaries {
+    font-size: 20px;
+    padding-left: 10px;
+  }
+
+  &__list {
+
+    &::before {
+      content: '\270F';
+      position: relative;
+      top: 18px;
+      left: 25px;
+    }
+  }
+
+
+  &__link {
+    font-size: 12px;
+    color: rgb(53, 52, 52);
+    opacity: .8;
+    transition: .2s all;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }

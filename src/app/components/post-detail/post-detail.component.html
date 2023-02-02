@@ -1,7 +1,18 @@
 <div class="post-detail">
   <div class="wrapper">
-    <div *ngIf="!isLoading else loading" class="post-detail__container">
-      <h1 class="post-detail__title">{{postDetail.title}}</h1>
+    <div *ngIf="!isLoading else loading">
+      <div class="post-detail__container">
+        <h1 class="post-detail__title">{{postDetail.title}}</h1>
+        <a *ngIf="postDetail.url"
+           class="post-detail__link"
+           target="_blank"
+           href="{{postDetail.url}}">
+          (Перейти на сайт)
+        </a>
+      </div>
+      <p class="post-detail__points">{{postDetail.points}} points by {{postDetail.author}} </p>
+
+      <h2 class="post-detail__commentaries">Commentaries:</h2>
       <ul *ngFor="let comment of postDetail.children" class="post-detail__list">
         <li class="post-detail__item">
           <app-commentaries
@@ -14,4 +25,8 @@
   </div>
 </div>
 
-<ng-template #loading>Подождите, идет загрузка...</ng-template>
+<ng-template #loading>
+  <p class="preloader">
+    Подождите, идет загрузка...
+  </p>
+</ng-template>
