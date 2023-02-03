@@ -12,7 +12,6 @@ import {queryParam} from "../models/query-param";
 export class PostService {
 
   API_URL = environment.API_URL;
-  url = 'search_by_date?tags=front_page';
 
   constructor(
     private http: HttpClient
@@ -34,6 +33,6 @@ export class PostService {
   }
 
   getById(id: number): Observable<PostDetail> {
-    return this.http.get<PostDetail>(`http://hn.algolia.com/api/v1/items/${id}`);
+    return this.http.get<PostDetail>(`https://hn.algolia.com/api/v1/items/${id}`);
   }
 }

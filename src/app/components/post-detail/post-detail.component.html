@@ -12,7 +12,7 @@
       </div>
       <p class="post-detail__points">{{postDetail.points}} points by {{postDetail.author}} </p>
 
-      <h2 class="post-detail__commentaries">Commentaries:</h2>
+      <h2 class="post-detail__commentaries" *ngIf="postDetail.children.length > 0">Commentaries:</h2>
       <ul *ngFor="let comment of postDetail.children" class="post-detail__list">
         <li class="post-detail__item">
           <app-commentaries
